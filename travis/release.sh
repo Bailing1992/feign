@@ -33,6 +33,7 @@ echo "release version is: ${tag} and next snapshot is: ${snapshot}"
 ./mvnw -B versions:set scm:checkin -DremoveSnapshot -DgenerateBackupPoms=false -Dmessage="prepare release ${tag}" -DpushChanges=false
 
 # tag the release
+echo "pushing tag ${tag}"
 ./mvnw scm:tag -DpushChanges=false
 
 # Update the versions to the next snapshot
