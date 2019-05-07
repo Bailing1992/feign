@@ -12,12 +12,20 @@ jdk:
 
 jobs:
   include:
-    - stage: deploy
-      # if: branch =~ /^release-([0-9\.]+)$/
+    - stage: snapshot
+      name: "Deploy Snapshot"
+      if: branch = master AND type IS NOT pull_request
       jdk: openjdk11
       install: true
       script:
-        - ./mvnw test -B
+        - ./mvnw -B -nsu -s ./travis/settings.xml -P release -pl -:feign-benchmark -DskipTests=true deploy
+    - stage: release
+      name: "Release"
+      if: tag =~ /^[0-9\.]$/
+      jdk: openjdk11
+      install: true
+      script:
+        - ./mvnw -B -nsu -s ./travis/settings.xml -P release -pl -:feign-benchmark -DskipTests=true deploy
 
 env:
   global:

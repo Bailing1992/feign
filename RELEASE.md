@@ -10,11 +10,11 @@ This repo uses [semantic versions](http://semver.org/). Please keep this in mind
 
 1. **Push a git tag**
 
-   The tag should be of the format `release-N.M.L`, for example `release-8.18.0`.
+   The tag should be of the format `N.M.L`, for example `8.18.0`.
 
 1. **Wait for Travis CI**
 
-   This part is controlled by [`travis/publish.sh`](travis/publish.sh). It creates a couple commits, bumps the version,
+   This part is controlled by [`travis/release.sh`](travis/release.sh). It creates a couple commits, bumps the version,
    publishes artifacts, syncs to Maven Central.
 
 ## Credentials
