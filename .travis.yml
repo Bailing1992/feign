@@ -14,7 +14,7 @@ jobs:
   include:
     - stage: snapshot
       name: "Deploy Snapshot"
-      if: branch = master AND type NOT pull_request
+      if: branch = master AND type != pull_request
       jdk: openjdk11
       install: true
       script:
