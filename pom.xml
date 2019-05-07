@@ -129,6 +129,11 @@
       <email>velo br at gmail dot com</email>
       <url>about.me/velo</url>
     </developer>
+    <developer>
+      <id>kdavisk6</id>
+      <name>Kevin Davis</name>
+      <email>kdavisk6@gmail.com</email>
+    </developer>
   </developers>
 
   <distributionManagement>
